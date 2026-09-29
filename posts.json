@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "titulo": "Mis primeros pasos con Python",
+        "contenido": "Una introducción a los primeros conceptos de Python.",
+        "autor": {
+            "nombre": "Federico",
+            "bio": "Comparto mis avances aprendiendo programación.",
+            "especialidad": "Python",
+            "redes_sociales": [
+                "@federico_python",
+                "@federico_dev"
+            ]
+        },
+        "tags": [
+            "Python",
+            "Principiantes"
+        ],
+        "estado": "publicado"
+    },
+    {
+        "id": 2,
+        "titulo": "Qué es Django y para qué sirve",
+        "contenido": "Django es un framework web desarrollado con Python.",
+        "autor": {
+            "nombre": "Federico",
+            "bio": "Comparto mis avances aprendiendo programación.",
+            "especialidad": "Python",
+            "redes_sociales": [
+                "@federico_python",
+                "@federico_dev"
+            ]
+        },
+        "tags": [
+            "Python",
+            "Django",
+            "Web"
+        ],
+        "estado": "borrador"
+    },
+    {
+        "id": 3,
+        "titulo": "Organizando datos con diccionarios",
+        "contenido": "",
+        "autor": {
+            "nombre": "Federico",
+            "bio": "Comparto mis avances aprendiendo programación.",
+            "especialidad": "Python",
+            "redes_sociales": [
+                "@federico_python",
+                "@federico_dev"
+            ]
+        },
+        "tags": [
+            "Python",
+            "Diccionarios"
+        ],
+        "estado": "archivado"
+    },
+    {
+        "id": 4,
+        "titulo": "Post nuevo para probar JSON",
+        "contenido": "Contenido de prueba",
+        "autor": {
+            "nombre": "Federico",
+            "bio": "Comparto mis avances aprendiendo programación.",
+            "especialidad": "Python",
+            "redes_sociales": [
+                "@federico_python",
+                "@federico_dev"
+            ]
+        },
+        "tags": [
+            "Python",
+            "JSON"
+        ],
+        "estado": "borrador"
+    }
+]
