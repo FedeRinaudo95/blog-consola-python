@@ -1,52 +1,57 @@
-# Blog de consola con POO y persistencia JSON
+# Blog Project — Módulo 1
 
-Este proyecto permite listar publicaciones, buscarlas por título, filtrarlas por etiqueta, crear posts y validar su información. Los posts se cargan y guardan en `posts.json`.
+Proyecto base de Django para iniciar un blog. Incluye el proyecto `blog_project` y la aplicación `posts`, registrada en la configuración.
 
-## Cómo ejecutar
+## Requisitos
 
-Desde la carpeta raíz del proyecto, ejecutá:
+- Python 3.10 o superior (compatible con Django 5.2 LTS).
+- Git.
+
+## Clonar el repositorio
+
+Cuando hayas creado el repositorio público en GitHub, reemplaza la URL y el nombre de carpeta por los tuyos:
 
 ```bash
-python main.py
+git clone URL_DE_TU_REPOSITORIO
+cd NOMBRE_DE_LA_CARPETA
 ```
 
-Si tu sistema usa el comando `python3`, ejecutá `python3 main.py`.
+## Crear y activar el entorno virtual
 
-## Opciones del menú
+macOS / Linux:
 
-1. Ver todos los posts.
-2. Buscar por título (no distingue mayúsculas y minúsculas).
-3. Filtrar por tag (no distingue mayúsculas y minúsculas).
-4. Crear un post; se asigna como autor el perfil de Federico.
-5. Validar los posts.
-6. Guardar los posts en JSON.
-7. Salir; guarda automáticamente los cambios.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-El tercer post de ejemplo tiene el contenido vacío intencionalmente para que la validación informe un error.
+Windows PowerShell:
 
-## Clases principales
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
 
-- `Autor`: contiene el nombre, la bio, la especialidad y las redes sociales.
-- `Post`: representa una publicación y contiene una instancia de `Autor`.
-- `Blog`: mantiene una lista de objetos `Post` y ofrece métodos para listar, buscar, filtrar, crear y validar publicaciones.
+## Instalar dependencias
 
-## Organización de archivos
+```bash
+python -m pip install -r requirements.txt
+```
 
-- `main.py`: punto de entrada; crea el objeto `Blog` y conecta el menú con las operaciones.
-- `posts.json`: datos persistidos en formato JSON.
-- `blog/__init__.py`: identifica `blog` como paquete.
-- `blog/modelos.py`: clases `Autor`, `Post` y `Blog`.
-- `blog/datos.py`: carga JSON y convierte diccionarios en objetos; guarda objetos convertidos en diccionarios.
-- `blog/menu.py`: muestra opciones y procesa la entrada del menú.
-- `blog/operaciones.py`: presenta los resultados de búsqueda y filtrado.
-- `blog/validaciones.py`: verifica los campos y tipos de los posts.
+## Preparar la base de datos y ejecutar
 
-## Persistencia
+```bash
+python manage.py migrate
+python manage.py runserver
+```
 
-Al iniciar, `blog/datos.py` lee `posts.json` y reconstruye objetos `Post` y `Autor`. Al guardar, convierte cada objeto a un diccionario y usa el módulo estándar `json` para escribirlo.
+Abre http://127.0.0.1:8000/ en el navegador. Para detener el servidor, presiona `Ctrl+C` en la terminal.
 
-Si el archivo no existe, está vacío o contiene JSON inválido, el programa muestra un mensaje y carga los posts de ejemplo. Podés crear posts desde el menú y guardarlos con la opción 6; la opción 7 también los guarda antes de salir.
+## Configuración incluida
 
-## Cambios respecto al checkpoint anterior
+- Aplicación `posts` registrada como `posts.apps.PostsConfig`.
+- Idioma: `es-ar`.
+- Zona horaria: `America/Argentina/Buenos_Aires`.
+- SQLite para desarrollo local.
 
-El sistema ahora usa clases y objetos en lugar de manejar cada publicación como un diccionario durante su funcionamiento. También guarda y recupera publicaciones mediante JSON para conservar los cambios entre ejecuciones.
+La clave secreta incluida es solo para desarrollo local. Antes de publicar una aplicación real, configura una clave privada mediante una variable de entorno y desactiva `DEBUG`.
